@@ -843,7 +843,12 @@ var _App2 = _interopRequireDefault(_App);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import registerServiceWorker from './registerServiceWorker';
+
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('root'));
+// registerServiceWorker();
+
+// import './index.css';
 
 /***/ }),
 /* 13 */
@@ -19497,17 +19502,16 @@ var App = function (_Component) {
         _react2.default.createElement(
           'header',
           { className: 'App-header' },
-          // _react2.default.createElement('img', { src: logo, className: 'App-logo', alt: 'logo' }),
           _react2.default.createElement(
             'h1',
             { className: 'App-title' },
-            'Welcome to React'
+            'Welcome to React APP.JS'
           )
         ),
         _react2.default.createElement(
           'p',
           { className: 'App-intro' },
-          'To get started, edit ',
+          'TEST To get started, edit ',
           _react2.default.createElement(
             'code',
             null,
@@ -19564,7 +19568,7 @@ exports = module.exports = __webpack_require__(28)(undefined);
 
 
 // module
-// exports.push([module.i, ".App {\n  text-align: center;\n}\n\n.App-logo {\n  animation: App-logo-spin infinite 20s linear;\n  height: 80px;\n}\n\n.App-header {\n  background-color: #222;\n  height: 150px;\n  padding: 20px;\n  color: white;\n}\n\n.App-title {\n  font-size: 1.5em;\n}\n\n.App-intro {\n  font-size: large;\n}\n\n@keyframes App-logo-spin {\n  from { transform: rotate(0deg); }\n  to { transform: rotate(360deg); }\n}\n", ""]);
+exports.push([module.i, ".App {\n  text-align: center;\n}\n\n.App-logo {\n  animation: App-logo-spin infinite 20s linear;\n  height: 80px;\n}\n\n.App-header {\n  background-color: #222;\n  height: 150px;\n  padding: 20px;\n  color: white;\n}\n\n.App-title {\n  font-size: 1.5em;\n}\n\n.App-intro {\n  font-size: large;\n}\n\n@keyframes App-logo-spin {\n  from { transform: rotate(0deg); }\n  to { transform: rotate(360deg); }\n}\n", ""]);
 
 // exports
 
