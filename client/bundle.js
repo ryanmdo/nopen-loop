@@ -19961,28 +19961,8 @@ var App = function (_Component) {
       return _react2.default.createElement(
         'div',
         { className: 'App' },
-        _react2.default.createElement(
-          'header',
-          { className: 'App-header' },
-          _react2.default.createElement(
-            'h1',
-            { className: 'App-title' },
-            'Welcome React APP.JS'
-          )
-        ),
-        _react2.default.createElement(
-          'p',
-          { className: 'App-intro' },
-          _react2.default.createElement(_Header2.default, null),
-          _react2.default.createElement(_InboxInput2.default, null),
-          'TEST To get started, edit ',
-          _react2.default.createElement(
-            'code',
-            null,
-            'src/App.js'
-          ),
-          ' and save to reload.'
-        )
+        _react2.default.createElement(_Header2.default, null),
+        _react2.default.createElement(_InboxInput2.default, null)
       );
     }
   }]);
@@ -20269,7 +20249,7 @@ var Header = function (_Component) {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                'div',
+                'header',
                 { className: 'header' },
                 'HEADER'
             );

@@ -8,10 +8,10 @@ export default class Header extends Component{
 
     render(){
         return(
-            <div className="header">
+            <header className="header">
 
                 HEADER
-            </div>
+            </header>
         );
     }
 }
