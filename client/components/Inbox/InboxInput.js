@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import './style.css';
 
 
-export default class InboxCard extends Component{
+export default class InboxInput extends Component{
 
 
 
     render(){
         return(
-            <div className="inbox-card">
+            <div className="inbox-input">
 
-                INBOX CARD
+                INBOX INPUT
             </div>
         );
     }
