@@ -20249,9 +20249,26 @@ var Header = function (_Component) {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                'header',
-                { className: 'header' },
-                'HEADER'
+                'nav',
+                { className: 'navbar navbar-default navbar-dark bg-dark' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'container-fluid' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'navbar-header' },
+                        _react2.default.createElement(
+                            'a',
+                            { className: 'navbar-brand', href: '#' },
+                            'INBOX'
+                        ),
+                        _react2.default.createElement(
+                            'a',
+                            { className: 'navbar-brand', href: '#' },
+                            'PROJECTS'
+                        )
+                    )
+                )
             );
         }
     }]);
