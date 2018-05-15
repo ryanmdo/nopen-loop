@@ -8,8 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">React Express Starter</h1>
+          <h1 className="App-title">NOPEN LOOP</h1>
         </header>
         <Customers />
       </div>
