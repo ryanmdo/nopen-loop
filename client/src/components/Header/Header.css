@@ -1,0 +1,24 @@
+/* I must be able to make the header actually work,
+and this might eventually turn into a sidebar on the left-hand side
+as that orientation is better for mobile UI */
+header{
+    background-color: rgba(255, 128, 0, 0.80);
+    height: 60px;
+    padding: 5px;
+    color: rgb(20, 0, 200);
+}
+
+
+
+#header-title {
+    font-size: 1.2em;
+    font-weight: bold;
+
+}
+
+
+#header-link {
+    font-size: 1em;
+    color: rgb(255,255,255)
+
+}

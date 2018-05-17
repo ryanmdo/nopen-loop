@@ -1,4 +1,5 @@
 const express = require('express');
+const apiRoutes = require('./server/routes/apiRoutes')
 
 const app = express();
 
@@ -11,6 +12,9 @@ app.get('/api/customers', (req, res) => {
 
   res.json(customers);
 });
+
+
+
 
 const port = 5000;
 
