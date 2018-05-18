@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './Inbox.css'
 
 
 class InboxCapture extends Component{
@@ -7,11 +8,18 @@ class InboxCapture extends Component{
         return(
             <div className='card'>
                 <div id='capture-header' className='card-header'>            
-                    CAPTURE
+                    <span id='capture-header'>CAPTURE</span>
+
+                    {/* This button ought to be able to do the proper api-calls */}
+
+                    <button id='capture-submit' type="button" className="btn btn-info">Submit</button>
                 </div>
                 <div className='card-body'>
-                    What goes here?
-                    This is where I got to build a place to capture notes in a basic text format.
+                    <div class="input-group">
+                        <div className="input-group-prepend"></div>
+                        
+                        <textarea className="form-control"></textarea>
+                    </div>
                 </div>
             </div>
         )
