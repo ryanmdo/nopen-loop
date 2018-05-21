@@ -15,7 +15,7 @@ class InboxCapture extends Component{
                     <button id='capture-submit' type="button" className="btn btn-info">Submit</button>
                 </div>
                 <div className='card-body'>
-                    <div class="input-group">
+                    <div className="input-group">
                         <div className="input-group-prepend"></div>
                         
                         <textarea className="form-control"></textarea>

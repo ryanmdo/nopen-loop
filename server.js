@@ -1,21 +1,24 @@
+//Still not sure what this is for, but I always gotta include it
+const bodyParser = require('body-parser');
+
 const express = require('express');
-const apiRoutes = require('./server/routes/apiRoutes')
+const routes = require('./routes');
+
+const mongoose = require('mongoose');
+
+
+
+
+
 
 const app = express();
-
-// app.get('/api/customers', (req, res) => {
-//   const customers = [
-//     {id: 1, firstName: 'John', lastName: 'Doe'},
-//     {id: 2, firstName: 'Brad', lastName: 'Traversy'},
-//     {id: 3, firstName: 'Mary', lastName: 'Swanson'},
-//   ];
-
-//   res.json(customers);
-// });
+app.use(routes);
 
 
 
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nopen_loop_dev_db");
 
-const port = 5000;
 
-app.listen(port, () => `NOPEN-LOOP Backend Server running on PORT: ${port}`);
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => `NOPEN-LOOP Backend Server running on PORT: ${PORT}`);

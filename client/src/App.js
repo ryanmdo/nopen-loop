@@ -9,7 +9,7 @@ import Projects from './components/Projects/Projects'
 import Process from './components/Process/Process'
 import Inbox from './components/Inbox/Inbox'
 import Header from './components/Header/Header'
-import Customers from './components/customers';
+
 
 class App extends Component {
   render() {
