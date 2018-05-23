@@ -11,6 +11,6 @@ const inboxSchema = new Schema({
 })
 
 
-const Inbox = mongoose.model('Inbox', inboxSchema)
+const Inbox = mongoose.model('Inbox', inboxSchema);
 
 module.exports = Inbox;

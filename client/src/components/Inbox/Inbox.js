@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 
 import InboxCapture from './InboxCapture';
-import InboxCard from './InboxCard';
 import InboxList from './InboxList';
 
 

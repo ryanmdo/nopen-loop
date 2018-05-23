@@ -3,7 +3,7 @@ const inboxRoutes = require('./inboxRoutes')
 
 
 
-router.use('/inbox',inboxRoutes);
+router.use('/inbox', inboxRoutes);
 
 
 
