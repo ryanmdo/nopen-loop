@@ -12,11 +12,12 @@ class InboxList extends Component {
 // Here, I would have to understand how to grab all the inbox list items from
 // MongoDB and then spell them all out
 
-//   componentDidMount() {
+   componentDidMount() {
+     console.log('InboxList componentDidMount EXECUTED')
 //     fetch('/api/customers')
 //       .then(res => res.json())
 //       .then(customers => this.setState({customers}, () => console.log('Customers fetched...', customers)));
-//   }
+   }
 
   render() {
     return (

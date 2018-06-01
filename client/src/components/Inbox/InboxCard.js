@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 
 class InboxCard extends Component{
 
+    
+
     render(){
         return(
             <div>

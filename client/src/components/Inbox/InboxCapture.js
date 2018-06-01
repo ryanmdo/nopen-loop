@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import './Inbox.css'
+import './Inbox.css';
 
+
+import Request from 'superagent';
 
 class InboxCapture extends Component{
 
@@ -11,12 +13,39 @@ class InboxCapture extends Component{
 
     handleInputChange = event => {
 
-        const { name, value } = event.target;
+        const { value } = event.target;
+        
 
         this.setState({
             body: value
         });
 
+    }
+
+    handleClick = event => {
+
+        console.log('handleClick event EXECEUTED with body text: '+ this.state.body)
+        
+        Request.post({
+            url:'localhost:3000/api/inbox',
+            header: {
+                body: this.state.body
+            } 
+        },
+        function(error,httpResponse,body){ 
+            /* ... */
+            if(error){
+                console.error('ERROR')
+                console.error(error);
+            }
+            console.log(body)
+         })
+        
+        this.setState({
+            body:''
+        });
+
+        
     }
 
     render(){
@@ -26,7 +55,7 @@ class InboxCapture extends Component{
                     <span id='capture-header'>CAPTURE</span>
 
                     {/* This button ought to be able to do the proper api-calls */}
-                    <a method='POST' a='/api/inbox'>
+                    <a onClick={this.handleClick}>
                         <button id='capture-submit' type="button" className="btn btn-info">Submit
                         </button>
                     </a>
