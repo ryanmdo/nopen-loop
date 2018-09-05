@@ -24,7 +24,7 @@ class InboxCapture extends Component{
 
     handleClick = event => {
 
-        console.log('handleClick event EXECEUTED with body text: '+ this.state.body)
+        console.log('handleClick event EXECEUTED with body text: ' + this.state.body)
         
         Request.post({
             url:'localhost:3000/api/inbox',

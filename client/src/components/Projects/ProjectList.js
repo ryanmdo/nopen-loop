@@ -21,6 +21,15 @@ class ProjectList extends Component {
             </div>
         );
     }
+
+
+
+    componentDidMount() {
+        console.log('ProjectList componentDidMount EXECUTED')
+   //     fetch('/api/customers')
+   //       .then(res => res.json())
+   //       .then(customers => this.setState({customers}, () => console.log('Customers fetched...', customers)));
+      }
 }
 
 

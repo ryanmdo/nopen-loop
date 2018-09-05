@@ -1,8 +1,12 @@
 //Still not sure what this is for, but I always gotta include it
 const bodyParser = require('body-parser');
 
+
+
 const express = require('express');
 const routes = require('./routes');
+
+
 
 const mongoose = require('mongoose');
 
