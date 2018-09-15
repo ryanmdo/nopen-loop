@@ -16,13 +16,17 @@ const mongoose = require('mongoose');
 
 
 const app = express();
-app.use(routes);
 
 
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nopen_loop_dev_db");
 
-
+console.log('TESTING')
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => `NOPEN-LOOP Backend Server running on PORT: ${PORT}`);
+
+
+//app.listen(5000)
+
+app.use(routes);
