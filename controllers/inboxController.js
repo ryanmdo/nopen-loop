@@ -4,7 +4,10 @@ module.exports = {
     create: function(request, response) {
 
         console.log('POST /api/inbox --> inboxController.create called')
-        console.log('request.headers.body: ' + request.headers.body)
+        console.log(request)
+
+        console.log(response)
+       // console.log('request.headers.body: ' + request.headers.body)
 
 
         //I must re-examine this whole structure with the controllers
