@@ -4,8 +4,8 @@ import './Inbox.css';
 
 // import Request from 'request';
 
-const axios = require('axios')
-
+// const axios = require('axios')
+import axios from 'axios'
 
 class InboxCapture extends Component{
 
@@ -60,13 +60,22 @@ class InboxCapture extends Component{
 
         //Still struggling to properly recieve the data on the server side.
         //It seems as though axios is working, unlike Request, but the full body needs to come through
-        axios({
-            method: 'post',
-            url: '/api/inbox',
-            data: {
-              body: this.state.body,
-            }
-          });
+        // axios({
+        //     method: 'POST',
+        //     url: '/api/inbox',
+        //     headers: {
+        //       body: this.state.body,
+        //     }
+        //   }).then(function (response) {
+        //     console.log(response);
+        //   });
+
+        axios.post('/api/inbox',{
+            body:this.state.body
+        })
+        .then(response => {
+            console.log(response)
+        })
         
 
 

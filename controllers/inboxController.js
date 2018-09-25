@@ -5,6 +5,8 @@ module.exports = {
 
         console.log('POST /api/inbox --> inboxController.create called')
         console.log(request)
+
+        console.log(response)
        // console.log('request.headers.body: ' + request.headers.body)
 
 
