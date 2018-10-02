@@ -4,10 +4,10 @@ module.exports = {
     create: function(request, response) {
 
         console.log('POST /api/inbox --> inboxController.create called')
-        console.log(request)
+        console.log(request.headers)
 
-        console.log(response)
-       // console.log('request.headers.body: ' + request.headers.body)
+        //console.log(response)
+        // console.log('request.headers.body: ' + request.headers.body)
 
 
         //I must re-examine this whole structure with the controllers
@@ -20,8 +20,7 @@ module.exports = {
         //         console.log(dbModel)
         //         response.json(dbModel)
         //     })
-        //     .catch(err => response.status(422).json(err))
-
+        //     .catch(err => response.status(422).json(err));
     }
 
 

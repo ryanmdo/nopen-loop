@@ -27,7 +27,7 @@ class InboxCapture extends Component{
 
     handleClick = event => {
 
-        console.log('handleClick event EXECEUTED with body text: ' + this.state.body)
+        console.log('handleClick event EXECUTED with body text: ' + this.state.body)
         
 
         //Perhaps this Request.post function is not the best and it very problematic
@@ -46,36 +46,26 @@ class InboxCapture extends Component{
         //     console.log(body)
         //  })
 
-        // axios.post('/api/inbox',
-        // {
-        //     body:this.state.body
-        // })
-        // .then(function(response){
-        //     console.log(response);
-        // }).
-        // catch(function(error){
-        //     console.error(error);
-        // })
 
 
+        //The above attempts to post the data are not working
         //Still struggling to properly recieve the data on the server side.
         //It seems as though axios is working, unlike Request, but the full body needs to come through
-        // axios({
-        //     method: 'POST',
-        //     url: '/api/inbox',
-        //     headers: {
-        //       body: this.state.body,
-        //     }
-        //   }).then(function (response) {
-        //     console.log(response);
-        //   });
+        
+        
+        axios({
+            method: 'POST',
+            url: '/api/inbox',
+            headers: {
+              body: this.state.body,
+            }
+          }).then(function (response) {
+            console.log(response);
+          }).catch(function (error){
+              console.error(error)
+          })
 
-        axios.post('/api/inbox',{
-            body:this.state.body
-        })
-        .then(response => {
-            console.log(response)
-        })
+        
         
 
 
