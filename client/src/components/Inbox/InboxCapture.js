@@ -53,11 +53,22 @@ class InboxCapture extends Component{
         //It seems as though axios is working, unlike Request, but the full body needs to come through
         
         
+
+        // let data = JSON.stringify({
+        //     body:this.state.body
+        // })
+
         axios({
             method: 'POST',
             url: '/api/inbox',
+            
+            //The concern that I have is whether or not the body text ought to be placed in the headers
+
+            // data,
             headers: {
-              body: this.state.body,
+                'Content-Type': 'application/json;charset=UTF-8',
+                "Access-Control-Allow-Origin": "*",
+                body: this.state.body
             }
           }).then(function (response) {
             console.log(response);
