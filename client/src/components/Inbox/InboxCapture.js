@@ -52,11 +52,7 @@ class InboxCapture extends Component{
         //Still struggling to properly recieve the data on the server side.
         //It seems as though axios is working, unlike Request, but the full body needs to come through
         
-        
 
-        // let data = JSON.stringify({
-        //     body:this.state.body
-        // })
 
         axios({
             method: 'POST',
