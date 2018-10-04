@@ -7,6 +7,8 @@ const inboxController = require('../../controllers/inboxController')
 //From the example, the controllers contain the main functionality
 //and these routers just point to those functions
 
+router.route('/')
+    .get(inboxController.read)
 
 router.route('/')
     .post(inboxController.create)

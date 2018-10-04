@@ -2,22 +2,18 @@ import React, {Component} from 'react';
 import './Inbox.css';
 
 
-// import Request from 'request';
-
-// const axios = require('axios')
 import axios from 'axios'
 
 class InboxCapture extends Component{
 
     state = {
-
             body:''
     }
 
     handleInputChange = event => {
 
+
         const { value } = event.target;
-        
 
         this.setState({
             body: value
@@ -25,57 +21,37 @@ class InboxCapture extends Component{
 
     }
 
+    handleEnterButton = event => {
+
+
+    }
+
+
+    //Needs to be rephrased as submitText
     handleClick = event => {
 
         console.log('handleClick event EXECUTED with body text: ' + this.state.body)
-        
 
-        //Perhaps this Request.post function is not the best and it very problematic
-        // Request.post({
-        //     url:'localhost:5000/api/inbox',
-        //     header: {
-        //         body: this.state.body
-        //     } 
-        // },
-        // function(error,httpResponse,body){ 
-        //     /* ... */
-        //     if(error){
-        //         console.error('ERROR')
-        //         console.error(error);
-        //     }
-        //     console.log(body)
-        //  })
-
-
-
-        //The above attempts to post the data are not working
-        //Still struggling to properly recieve the data on the server side.
+        //Struggling to properly recieve the data on the server side.
         //It seems as though axios is working, unlike Request, but the full body needs to come through
-        
-
 
         axios({
             method: 'POST',
             url: '/api/inbox',
             
             //The concern that I have is whether or not the body text ought to be placed in the headers
-
-            // data,
             headers: {
                 'Content-Type': 'application/json;charset=UTF-8',
-                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Origin": "*", //don't know what this is
                 body: this.state.body
             }
           }).then(function (response) {
             console.log(response);
           }).catch(function (error){
               console.error(error)
-          })
+          });
 
-        
-        
-
-
+    
         //Clears out the input body
         this.setState({
             body:''
@@ -83,6 +59,9 @@ class InboxCapture extends Component{
 
         
     }
+
+
+
 
     render(){
         return(

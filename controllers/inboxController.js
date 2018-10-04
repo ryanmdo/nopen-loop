@@ -1,47 +1,48 @@
 const db = require('../models');
 
 //Because I ain't liking Date object
+//And I still don't use it.
 var { DateTime } = require('luxon');
 
 module.exports = {
+
+    //CRUD-Create POST
     create: function(request, response) {
 
         console.log('POST /api/inbox --> inboxController.create called')
         //The data should be in request.headers.body
         //console.log('request.headers.body: '+ request.headers.body)
-
-
-        //Needs the timestamp, and all the other metadata
-
-        let d = DateTime.local().setZone('America/Los_Angeles')
         
         db.Inbox.create({
             body:request.headers.body,
-            // unix_timestamp: d
+            //The utc_timestamp is already created in the model
         })
-            .then(dbModel => { 
-                console.log(dbModel)
-                response.json(dbModel)
+            .then(dbResult => { 
+                console.log(dbResult)
+                response.json(dbResult)
             })
             .catch(error => {
                 response.status(422).json(error)
             });
 
+    },//important comma
 
-        
 
-        //I must re-examine this whole structure with the controllers
-        //and the models and whatnot.
+    //CRUD-Read GET
+    read: function(request, response) {
 
-        // console.log(db.Inbox.create())
-        // db.Inbox
-        //     .create(request.body)
-        //     .then(dbModel => { 
-        //         console.log(dbModel)
-        //         response.json(dbModel)
-        //     })
-        //     .catch(err => response.status(422).json(err));
+        console.log('GET /api/inbox --> inboxController.read called')
+
+        db.Inbox.find(
+            function(error, results){
+                if(error){
+                    console.error(error)
+                } else{
+
+                response.json(results)
+                }
+            }
+        )
     }
-
 
 };
