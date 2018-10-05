@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import './Inbox.css';
 
 
+import InboxCard from './InboxCard';
 
-import axios from 'axios'
+
+import axios from 'axios';
+
 
 class InboxList extends Component {
   constructor() {
@@ -11,7 +14,8 @@ class InboxList extends Component {
     this.componentDidMount = this.componentDidMount.bind(this)
 
     this.state = {
-      captures: []
+      body: '',
+      inboxCards: []
     };
 
     //    the function needs to bind to this
@@ -21,42 +25,40 @@ class InboxList extends Component {
 
 // Here, I would have to understand how to grab all the inbox list items from
 // MongoDB and then spell them all out
-
-//Use function to write and update the Captures
-
-  updateCapture(getResponse){
-    this.setState({
-      captures: getResponse[2].body
-    })
-
-  }
   
 
     componentDidMount() {
      console.log('InboxList componentDidMount EXECUTED')
 
      //I feel as though I have some async problem
-
       axios({
         method: 'GET',
-        url: '/api/inbox',
-       
-      }).then(function(response){
-        console.log(response.data)
+        url: '/api/inbox'
+
+        //This is wen to use an arrow function
+        //The previous syntax function(response {}) made it so that this was not this, so this could not setState
+      }).then(response => {
         console.log(response.data.length)
 
-        for(var i=0;i<response.data.length;i++){
-          console.log(response.data[i])
+        if(response.data.length > 0){
 
-          // updateCapture(response.data)
+          for(var i=0;i<response.data.length;i++){
+            
+            console.log(response.data[i])
 
-          //Just the setState is causing issues because it doesnt know what this is
-          // this.setState({
-          //   // captures: response.data.length[i].body
-          // })
-          // this.state.captures += response.data.length[i].body
+            this.setState({
+              body:response.data[0].body
+            })
+            //Just the setState is causing issues because it doesnt know what this is
+            // this.setState({
+            //   // captures: response.data.length[i].body
+            // })
+            // this.state.captures += response.data.length[i].body
+          }
+
         }
-      }).catch(function(error){
+
+      }).catch(error => {
         console.error(error)
       });
 
@@ -71,7 +73,8 @@ class InboxList extends Component {
                 </div>
                 <div className='card-body'>
                     A bunch of inbox cards ought to be displayed here.
-
+                    
+                    <InboxCard body={this.state.body}/>
                     <div>
                       {/* <textarea value={this.state.captures} className="form-control"></textarea> */}
                     </div>

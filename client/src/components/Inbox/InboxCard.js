@@ -1,14 +1,22 @@
-https://www.youtube.com/watch?v=IvxZTwLd-5Iimport React, {Component} from 'react';
+import React, {Component} from 'react';
 
 
 class InboxCard extends Component{
 
+    constructor(props){
+        super(props)
+    }
+
     
 
     render(){
+
+        //Recieve all the props that are neede
+        // let {body} = this.props;
+
         return(
             <div>
-                INBOX CARD
+                <p>{this.props.body}</p>
             </div>
         )
     }
