@@ -2,7 +2,6 @@ const db = require('../models');
 
 //Because I ain't liking Date object
 //And I still don't use it.
-var { DateTime } = require('luxon');
 
 module.exports = {
 
