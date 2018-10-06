@@ -72,8 +72,8 @@ class InboxList extends Component {
                     Current Inbox
                 </div>
                 <div className='card-body'>
-                    A bunch of inbox cards ought to be displayed here.
-                    
+                    {/* A bunch of inbox cards ought to be displayed here. */}
+                  
                     <InboxCard body={this.state.body}/>
                     <div>
                       {/* <textarea value={this.state.captures} className="form-control"></textarea> */}
