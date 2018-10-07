@@ -25,13 +25,13 @@ class Header extends Component {
                                 <h3 id="header-title">NOPEN-LOOP</h3>
                             </div>
 
-                            <div className="header-item header-navigation-links">
+                            {/* <div className="header-item header-navigation-links">
                                 <ul>
                                     <li><a id='header-link' href='/'>Capture</a></li>
                                     <li><a id='header-link' href='/process'>Process</a></li>
                                     <li><a id='header-link' href='/projects'>Projects</a></li>
                                 </ul>
-                            </div>
+                            </div> */}
                         
                         {/* </div> */}
                     </nav>

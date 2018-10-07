@@ -21,9 +21,9 @@ class Sidebar extends Component{
 
             <nav className={sidebarClass}>
                 <ul>
-                    <li><a id='sidebar-link' href='/'>Capture</a></li>
-                    <li><a id='sidebar-link' href='/process'>Process</a></li>
-                    <li><a id='sidebar-link' href='/projects'>Projects</a></li>
+                    <li><a id='sidebar-link' href='/'>CAPTURE</a></li>
+                    <li><a id='sidebar-link' href='/process'>PROCESS</a></li>
+                    <li><a id='sidebar-link' href='/projects'>PROJECTS</a></li>
                 </ul>
             </nav>
 
