@@ -21,7 +21,7 @@ class App extends Component {
       sidebarOpen: false,
 
     }
-  }
+  };
 
   sidebarToggleHandler = () => {
     // Grab the previous state, and flip that and return it as the new state
@@ -30,15 +30,27 @@ class App extends Component {
     });
   };
 
+  backdropToggleHandler = () => {
+    this.setState({sidebarOpen: false});
+  };
+
 
   render() {
+    let backdrop;
+
+    if(this.state.sidebarOpen){
+      backdrop = <Backdrop click={this.backdropToggleHandler}/>;
+    }
+
     return (
       <div className="App" style={{
         height: '100%'
       }}>
-          <Header />
-          <Sidebar />
-          <Backdrop />
+          <Header sidebarToggleHandler={this.sidebarToggleHandler}/>
+          <Sidebar show={this.state.sidebarOpen}/>
+          {backdrop}
+          {/* These are now just variables in jsx that are being turned on or off by the clicking.
+          When sidebarOpen is true then the Sidebar and Backdrop elements appear */}
           <Router>
         <main style={{
           marginTop: '80px',

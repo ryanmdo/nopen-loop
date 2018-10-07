@@ -4,9 +4,13 @@ import './Sidebar.css'
 
 class Backdrop extends Component {
 
+    constructor(props){
+        super(props)
+    }
+
     render(){
         return(
-            <div className="backdrop">
+            <div className="backdrop" onClick={this.props.click}>
 
             </div>
         )

@@ -34,7 +34,14 @@
     width:70%;
     max-width:250px;
     z-index: 200;
+    transform: translateX(-120%);
+    transition: transform 0.1s ease-out
+    /* transition listens to the transform function and occurs over 0.3s with the ease-out function */
     /* this has to do with forcing the sidebar to the front on the ui */
+}
+
+.sidebar.open{
+    transform:translateX(0%)
 }
 
 .sidebar ul{

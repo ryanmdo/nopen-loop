@@ -6,6 +6,9 @@ import SidebarToggleButton from '../Sidebar/SidebarToggleButton';
 
 class Header extends Component {
 
+    constructor(props){
+        super(props)
+    }
 
 
     render(){
@@ -16,13 +19,13 @@ class Header extends Component {
                         {/* Be able to make this actually look nice */}
                         {/* <div className="row"> */}
                             <div className="header-item">
-                                <SidebarToggleButton />
+                                <SidebarToggleButton click={this.props.sidebarToggleHandler}/>
                             </div>
                             <div className="header-item header-logo">
                                 <h3 id="header-title">NOPEN-LOOP</h3>
                             </div>
 
-                            <div className="header-item header-navigation">
+                            <div className="header-item header-navigation-links">
                                 <ul>
                                     <li><a id='header-link' href='/'>Capture</a></li>
                                     <li><a id='header-link' href='/process'>Process</a></li>

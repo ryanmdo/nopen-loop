@@ -58,3 +58,9 @@ div.header-item{
     color: rgb(255,255,255)
 
 }
+
+@media (max-width:768px){
+    .header-navigation-links {
+        display:none;
+    }
+}
