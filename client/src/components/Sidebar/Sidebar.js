@@ -1,4 +1,4 @@
-import react, {Component} from 'react';
+import React, {Component} from 'react';
 import './Sidebar.css'
 
 class Sidebar extends Component{
@@ -8,9 +8,15 @@ class Sidebar extends Component{
     render(){
         return(
 
-            <div className='container-fluid'>
+            <nav className="sidebar">
+                <ul>
+                    <li><a id='sidebar-link' href='/'>Capture</a></li>
+                    <li><a id='sidebar-link' href='/process'>Process</a></li>
+                    <li><a id='sidebar-link' href='/projects'>Projects</a></li>
+                </ul>
+            </nav>
 
-            </div>
+
         )
     }
 }

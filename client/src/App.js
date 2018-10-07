@@ -9,26 +9,50 @@ import Projects from './components/Projects/Projects'
 import Process from './components/Process/Process'
 import Inbox from './components/Inbox/Inbox'
 import Header from './components/Header/Header'
+import Sidebar from './components/Sidebar/Sidebar'
+import Backdrop from './components/Sidebar/Backdrop'
 
 
 class App extends Component {
+  constructor(props){
+    super(props)
+
+    this.state = {
+      sidebarOpen: false,
+
+    }
+  }
+
+  sidebarToggleHandler = () => {
+    // Grab the previous state, and flip that and return it as the new state
+    this.setState((previousState) => {
+      return {sidebarOpen: !previousState.sidebarOpen};
+    });
+  };
+
+
   render() {
     return (
-      <div className="App">
-        <Header />
+      <div className="App" style={{
+        height: '100%'
+      }}>
+          <Header />
+          <Sidebar />
+          <Backdrop />
+          <Router>
+        <main style={{
+          marginTop: '80px',
+        }}>
 
+        {/* Make height 100% for the sidebar drawer */}
+            <Switch>
+              <Route exact path="/" component={Inbox} />
+              <Route exact path="/process/" component={Process} />
+              <Route exact path="/projects/" component={Projects} />
 
-
-        <Router>
-    <div>
-      <Switch>
-        <Route exact path="/" component={Inbox} />
-        <Route exact path="/process/" component={Process} />
-        <Route exact path="/projects/" component={Projects} />
-
-      </Switch>
-    </div>
-  </Router>
+            </Switch>
+        </main>
+          </Router>
 
         {/* This is how I got to make react-router work
         I just need it to connect to the 3 main pages */}
