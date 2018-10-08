@@ -14,8 +14,7 @@ class InboxList extends Component {
     this.componentDidMount = this.componentDidMount.bind(this)
 
     this.state = {
-      body: '',
-      inboxCards: []
+      data: [],
     };
 
     //    the function needs to bind to this
@@ -38,23 +37,15 @@ class InboxList extends Component {
         //This is wen to use an arrow function
         //The previous syntax function(response {}) made it so that this was not this, so this could not setState
       }).then(response => {
-        console.log(response.data.length)
 
         if(response.data.length > 0){
-
-          for(var i=0;i<response.data.length;i++){
-            
-            console.log(response.data[i])
-
             this.setState({
-              body:response.data[0].body
-            })
-            //Just the setState is causing issues because it doesnt know what this is
-            // this.setState({
-            //   // captures: response.data.length[i].body
-            // })
-            // this.state.captures += response.data.length[i].body
-          }
+              data:response.data
+            });
+
+
+            // console.log('this.state.data:');
+            // console.log(this.state.data);
 
         }
 
@@ -65,6 +56,17 @@ class InboxList extends Component {
    }
 
   render() {
+    
+    //This should make it so that data is this.state.data
+    let {data} = this.state;
+
+    const bodyList = data.map((object) => {
+      return(
+        
+        <InboxCard body={object.body}/>
+      )
+    })
+
     return (
         <div className='card'>
 
@@ -72,8 +74,9 @@ class InboxList extends Component {
                     Current Inbox
                 </div>
                 <div className='card-body'>
-                    {/* A bunch of inbox cards ought to be displayed here. */}
-                  
+                    <ul>
+                      {bodyList}
+                    </ul>
                     <InboxCard body={this.state.body}/>
                     <div>
                       {/* <textarea value={this.state.captures} className="form-control"></textarea> */}
