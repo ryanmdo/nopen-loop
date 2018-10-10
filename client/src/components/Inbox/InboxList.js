@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+
+
 import './Inbox.css';
-
-
-import InboxCard from './InboxCard';
+import InboxItem from './InboxItem'
 
 
 import axios from 'axios';
@@ -43,10 +43,6 @@ class InboxList extends Component {
               data:response.data
             });
 
-
-            // console.log('this.state.data:');
-            // console.log(this.state.data);
-
         }
 
       }).catch(error => {
@@ -55,15 +51,24 @@ class InboxList extends Component {
 
    }
 
+
+   //This is for when you remove those items
+   removeItem(id){
+    console.log('ITEM BEING REMOVED')
+   }
+
   render() {
     
     //This should make it so that data is this.state.data
     let {data} = this.state;
 
-    const bodyList = data.map((object) => {
+    const inboxItemList = data.map((object) => {
+      // console.log(object);
+
       return(
-        
-        <InboxCard body={object.body}/>
+        <li key={object._id.toString()} className='list-unstyled'>
+          <InboxItem body={object.body} removeItem={this.removeItem}/>
+        </li>
       )
     })
 
@@ -74,13 +79,9 @@ class InboxList extends Component {
                     Current Inbox
                 </div>
                 <div className='card-body'>
-                    <ul>
-                      {bodyList}
-                    </ul>
-                    <InboxCard body={this.state.body}/>
-                    <div>
-                      {/* <textarea value={this.state.captures} className="form-control"></textarea> */}
-                    </div>
+                  <ul>
+                      {inboxItemList}
+                  </ul>
                 </div>
         </div>
     );
