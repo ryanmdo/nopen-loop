@@ -11,10 +11,10 @@ class Process extends Component {
         return(
             <div className='row'>
 
-                <div className='col-md-4'>
+                <div className='col-md-6'>
                     <InboxList/>
                 </div>
-                <div className='col-md-8'>
+                <div className='col-md-6'>
                     <ProjectList/>
                 </div>
             </div>

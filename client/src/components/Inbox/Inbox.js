@@ -12,10 +12,10 @@ class Inbox extends Component{
     render(){
         return(
             <div className='row'>
-                <div className='col-md-4'>
+                <div className='col-md-6'>
                     <InboxCapture/>
                 </div>
-                <div className='col-md-8'>
+                <div className='col-md-6'>
                     <InboxList/>
                 </div>
             </div>

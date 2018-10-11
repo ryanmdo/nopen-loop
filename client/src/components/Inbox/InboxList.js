@@ -60,10 +60,10 @@ class InboxList extends Component {
   render() {
 
     return (
-      <div className='card'>
+      <div className='card bg-transparent'>
 
-        <div className='card-header'>            
-          <span id='capture-header'>INBOX ITEMS
+        <div className='card-header '>            
+          <span className='inbox-header'>INBOX ITEMS
           </span>
         </div>
 

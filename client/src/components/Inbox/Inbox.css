@@ -8,3 +8,40 @@
     font-weight:bold;
     font-size: 1.2em;
 }
+
+.card-body {
+
+    background: rgba(0,0,0,0.80);
+    border-color: black;
+
+}
+
+.card-header{
+
+    background: rgba(0,0,0,0.70);
+    border-color: black;
+}
+
+#capture-submit{
+
+    font-weight: bold;
+}
+
+span.capture-header {
+
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+span.inbox-header {
+
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+span.close-button {
+
+    color: white;
+}

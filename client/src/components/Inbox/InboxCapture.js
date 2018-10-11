@@ -13,7 +13,9 @@ class InboxCapture extends Component{
     handleInputChange = event => {
 
 
-        const { value } = event.target;
+        const value= event.target.value;
+
+        console.log(value)
 
         this.setState({
             body: value
@@ -67,10 +69,10 @@ class InboxCapture extends Component{
         return(
             <div className='card'>
                 <div id='capture-header' className='card-header'>            
-                    <span id='capture-header'>CAPTURE</span>
+                    <span className='capture-header'>CAPTURE</span>
 
                     <a onClick={this.handleClick}>
-                        <button id='capture-submit' type="button" className="btn btn-info">Submit
+                        <button id='capture-submit' type="button" className="btn btn-info">INPUT
                         </button>
                     </a>
                 </div>

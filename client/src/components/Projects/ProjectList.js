@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 
 
+import './Projects.css'
+
+
 class ProjectList extends Component {
 
 //How exactly will this component be able to adjust accordingly to the
@@ -12,7 +15,8 @@ class ProjectList extends Component {
 
             <div className='card'>
                 <div className='card-header'>
-                    PROJECT LIST
+                    <span className='projects-header'>PROJECTS LIST
+                    </span>
                 </div>
 
                 <div className='card-body'>
