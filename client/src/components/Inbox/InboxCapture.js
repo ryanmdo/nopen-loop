@@ -69,7 +69,6 @@ class InboxCapture extends Component{
                 <div id='capture-header' className='card-header'>            
                     <span id='capture-header'>CAPTURE</span>
 
-                    {/* This button ought to be able to do the proper api-calls */}
                     <a onClick={this.handleClick}>
                         <button id='capture-submit' type="button" className="btn btn-info">Submit
                         </button>

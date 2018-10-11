@@ -11,6 +11,7 @@ import Inbox from './components/Inbox/Inbox'
 import Header from './components/Header/Header'
 import Sidebar from './components/Sidebar/Sidebar'
 import Backdrop from './components/Sidebar/Backdrop'
+import './App.css'
 
 
 class App extends Component {

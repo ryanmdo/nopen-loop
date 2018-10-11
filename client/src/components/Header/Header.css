@@ -1,10 +1,17 @@
 /* I must be able to make the header actually work,
 and this might eventually turn into a sidebar on the left-hand side
 as that orientation is better for mobile UI */
+
+.card-header {
+
+    
+}
+
+
 header{
-    background-color: rgba(255, 125, 0, 0.80);
+    background-color: rgb(212,136,114);
     width: 100%;
-    height: 70px;
+    height: 80px;
     color: rgb(20, 0, 200);
     top: 0px;
     left: 0px;
@@ -22,7 +29,7 @@ div.header-item{
 .header-logo {
     font-size: 2.0rem;
     font-family:sans-serif;
-    color: rgb(0, 0, 255);
+    color:#142634;
 }
 
 .header-navigation{

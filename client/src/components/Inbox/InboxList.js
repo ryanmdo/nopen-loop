@@ -14,20 +14,18 @@ class InboxList extends Component {
     this.componentDidMount = this.componentDidMount.bind(this)
 
     this.state = {
-      data: [],
+      itemArr: [],
     };
-
-    //    the function needs to bind to this
-    //    this.delta = this.delta.bind(this);
 
   }
 
+
+
+
 // Here, I would have to understand how to grab all the inbox list items from
 // MongoDB and then spell them all out
-  
-
     componentDidMount() {
-     console.log('InboxList componentDidMount EXECUTED')
+    console.log('InboxList componentDidMount EXECUTED')
 
      //I feel as though I have some async problem
       axios({
@@ -40,7 +38,7 @@ class InboxList extends Component {
 
         if(response.data.length > 0){
             this.setState({
-              data:response.data
+              itemArr:response.data
             });
 
         }
@@ -54,36 +52,39 @@ class InboxList extends Component {
 
    //This is for when you remove those items
    removeItem(id){
-    console.log('ITEM BEING REMOVED')
+    console.log('ITEM BEING REMOVED\nid: '+id)
+    
+    
    }
 
   render() {
-    
-    //This should make it so that data is this.state.data
-    let {data} = this.state;
-
-    const inboxItemList = data.map((object) => {
-      // console.log(object);
-
-      return(
-        <li key={object._id.toString()} className='list-unstyled'>
-          <InboxItem body={object.body} removeItem={this.removeItem}/>
-        </li>
-      )
-    })
 
     return (
-        <div className='card'>
+      <div className='card'>
 
-            <div className='card-header'>            
-                    Current Inbox
-                </div>
-                <div className='card-body'>
-                  <ul>
-                      {inboxItemList}
-                  </ul>
-                </div>
+        <div className='card-header'>            
+          <span id='capture-header'>INBOX ITEMS
+          </span>
         </div>
+
+        <div className='card-body'>
+          <ul>
+            {/* {inboxItemList} */
+              this.state.itemArr.map((object) => {
+          
+              return(
+                    <InboxItem 
+                        key={object._id.toString()}
+                        body={object.body}
+                        removeItem={this.removeItem.bind(this,object._id)}/>
+                );
+              })
+            }
+          </ul>
+
+        </div>
+
+      </div>
     );
   }
 }
