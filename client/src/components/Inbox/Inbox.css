@@ -5,6 +5,7 @@
 
 #capture-header {
 
+    background: rgba(0,0,0,0.70);
     font-weight:bold;
     font-size: 1.2em;
 }
@@ -13,7 +14,7 @@
 
     background: rgba(0,0,0,0.80);
     border-color: black;
-
+  
 }
 
 .card-header{
@@ -45,3 +46,9 @@ span.close-button {
 
     color: white;
 }
+
+ul {
+    margin: 0px;
+    list-style-position: inside;
+}
+

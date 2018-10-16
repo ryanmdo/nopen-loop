@@ -13,6 +13,9 @@ router.route('/')
 router.route('/')
     .post(inboxController.create)
 
+router.route('/')
+    .delete(inboxController.delete)
+
 // const booksController = require("../../controllers/booksController");
 
 // // Matches with "/api/books"

@@ -53,7 +53,25 @@ class InboxList extends Component {
    //This is for when you remove those items
    removeItem(id){
     console.log('ITEM BEING REMOVED\nid: '+id)
+    let urlId = '/api/inbox/'
     
+    axios({
+      method:'DELETE',
+      url:urlId,
+      
+      headers : {
+        'Content-Type': 'application/json;charset=UTF-8',
+        "Access-Control-Allow-Origin": "*",
+        id:id, //don't know what this is
+      },
+
+
+
+    }).then(response => {
+      console.log(response)
+    }).catch(error => {
+      console.error(error)
+    })
     
    }
 
@@ -61,14 +79,13 @@ class InboxList extends Component {
 
     return (
       <div className='card bg-transparent'>
-
         <div className='card-header '>            
           <span className='inbox-header'>INBOX ITEMS
           </span>
         </div>
 
         <div className='card-body'>
-          <ul>
+          <ul className='inbox-ul'>
             {/* {inboxItemList} */
               this.state.itemArr.map((object) => {
           

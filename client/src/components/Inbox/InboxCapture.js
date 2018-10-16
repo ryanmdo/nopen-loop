@@ -67,8 +67,8 @@ class InboxCapture extends Component{
 
     render(){
         return(
-            <div className='card'>
-                <div id='capture-header' className='card-header'>            
+            <div className='card bg-transparent'>
+                <div  className='card-header'>            
                     <span className='capture-header'>CAPTURE</span>
 
                     <a onClick={this.handleClick}>
