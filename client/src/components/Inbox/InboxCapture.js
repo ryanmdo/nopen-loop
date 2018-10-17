@@ -53,7 +53,6 @@ class InboxCapture extends Component{
               console.error(error)
           });
 
-    
         //Clears out the input body
         this.setState({
             body:''
