@@ -22,14 +22,6 @@ class Header extends Component {
                             <div className="header-item header-logo">
                                 <h3 id="header-title">NOPEN-LOOP</h3>
                             </div>
-
-                            {/* <div className="header-item header-navigation-links">
-                                <ul>
-                                    <li><a id='header-link' href='/'>Capture</a></li>
-                                    <li><a id='header-link' href='/process'>Process</a></li>
-                                    <li><a id='header-link' href='/projects'>Projects</a></li>
-                                </ul>
-                            </div> */}
                         
                     </nav>
                 </header>

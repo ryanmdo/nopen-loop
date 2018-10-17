@@ -1,33 +1,21 @@
 const router = require('express').Router();
-
-
-
 const inboxController = require('../../controllers/inboxController')
 
 //From the example, the controllers contain the main functionality
 //and these routers just point to those functions
 
 router.route('/')
-    .get(inboxController.read)
+    .post(inboxController.create);
 
 router.route('/')
-    .post(inboxController.create)
+    .get(inboxController.read);
 
 router.route('/')
-    .delete(inboxController.delete)
+    .put(inboxController.update);
 
-// const booksController = require("../../controllers/booksController");
+router.route('/')
+    .delete(inboxController.delete);
 
-// // Matches with "/api/books"
-// router.route("/")
-//   .get(booksController.findAll)
-//   .post(booksController.create);
 
-// // Matches with "/api/books/:id"
-// router
-//   .route("/:id")
-//   .get(booksController.findById)
-//   .put(booksController.update)
-//   .delete(booksController.remove);
-
+    
 module.exports = router;

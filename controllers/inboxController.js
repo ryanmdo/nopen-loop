@@ -45,6 +45,10 @@ module.exports = {
     },//Another important comma
 
 
+    update: function(request, response){
+
+    },
+
     delete: function(request, response) {
 
         console.log('DELETE /api/inbox --> inboxController.delete called')

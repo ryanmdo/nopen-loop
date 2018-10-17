@@ -1,5 +1,6 @@
 module.exports = {
 
-    Inbox: require('./inbox')
+    Inbox: require('./inbox'),
+    Project: require('./project'),
 }
 

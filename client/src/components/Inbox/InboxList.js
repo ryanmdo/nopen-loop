@@ -11,8 +11,8 @@ import axios from 'axios';
 class InboxList extends Component {
   constructor() {
     super();
-    this.componentDidMount = this.componentDidMount.bind(this)
-
+    this.componentDidMount = this.componentDidMount.bind(this);
+    
     this.state = {
       itemArr: [],
     };
