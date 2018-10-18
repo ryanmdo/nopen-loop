@@ -12,10 +12,8 @@ class InboxCapture extends Component{
 
     handleInputChange = event => {
 
-
         const value= event.target.value;
-
-        console.log(value)
+        //console.log(value)
 
         this.setState({
             body: value
@@ -24,7 +22,15 @@ class InboxCapture extends Component{
     }
 
     handleEnterButton = event => {
+        // console.log(event.key)
+        if(event.key === 'Enter'){
+            
+            this.handleClick();
 
+            this.setState({
+                body:''
+            });
+        }
 
     }
 
@@ -68,10 +74,10 @@ class InboxCapture extends Component{
         return(
             <div className='card bg-transparent'>
                 <div  className='card-header'>            
-                    <span className='capture-header'>CAPTURE</span>
+                    <span className='header-title'>CAPTURE</span>
 
                     <a onClick={this.handleClick}>
-                        <button id='capture-submit' type="button" className="btn btn-info">INPUT
+                        <button id='submit-text' type="button" className="btn btn-info">INPUT
                         </button>
                     </a>
                 </div>
@@ -79,7 +85,7 @@ class InboxCapture extends Component{
                     <div className="input-group">
                         <div className="input-group-prepend"></div>
                         
-                        <textarea onChange={this.handleInputChange} value={this.state.body} className="form-control"></textarea>
+                        <textarea onKeyPress={this.handleEnterButton} onChange={this.handleInputChange} value={this.state.body} className="form-control"></textarea>
                     </div>
                 </div>
             </div>

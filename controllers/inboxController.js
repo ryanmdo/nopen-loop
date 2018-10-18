@@ -52,12 +52,10 @@ module.exports = {
     delete: function(request, response) {
 
         console.log('DELETE /api/inbox --> inboxController.delete called')
-        console.log('request.headers.id');
-        console.log(request.headers.id);
+        // console.log('request.headers.id');
+        // console.log(request.headers.id);
 
         let id = request.headers.id;
-        // console.log('request.headers.id:')
-        // console.log(request.headers.idG);
 
         db.Inbox.deleteOne({
             "_id": id

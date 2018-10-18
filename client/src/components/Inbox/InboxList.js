@@ -9,10 +9,10 @@ import axios from 'axios';
 
 
 class InboxList extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.componentDidMount = this.componentDidMount.bind(this);
-    
+
     this.state = {
       itemArr: [],
     };
@@ -79,25 +79,25 @@ class InboxList extends Component {
 
     return (
       <div className='card bg-transparent'>
-        <div className='card-header '>            
-          <span className='inbox-header'>INBOX ITEMS
-          </span>
+        <div className='card-header'>            
+          <span className='header-title'>INBOX ITEMS</span>
         </div>
 
         <div className='card-body'>
-          <ul className='inbox-ul'>
-            {/* {inboxItemList} */
+            {
+
               this.state.itemArr.map((object) => {
           
               return(
                     <InboxItem 
                         key={object._id.toString()}
                         body={object.body}
-                        removeItem={this.removeItem.bind(this,object._id)}/>
+                        removeItem={this.removeItem.bind(this,object._id)}
+                        closeHidden={this.props.closeHidden} />
+                        
                 );
               })
             }
-          </ul>
 
         </div>
 

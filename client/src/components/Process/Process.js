@@ -15,7 +15,7 @@ class Process extends Component {
                     <InboxList/>
                 </div>
                 <div className='col-md-6'>
-                    <ProjectList/>
+                    <ProjectList closeHidden={false}/>
                 </div>
             </div>
         )

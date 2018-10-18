@@ -16,7 +16,7 @@ class Inbox extends Component{
                     <InboxCapture/>
                 </div>
                 <div className='col-md-6'>
-                    <InboxList/>
+                    <InboxList closeHidden={true}/>
                 </div>
             </div>
         )

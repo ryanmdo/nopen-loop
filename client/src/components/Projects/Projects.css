@@ -1,6 +1,34 @@
-span.projects-header {
+.card-body {
 
-    color:white;
+    background: rgba(0,0,0,0.80);
+    border-color: black;
+  
+}
+
+.card-header{
+
+    background: rgba(0,0,0,0.70);
+    border-color: black;
+    height: 60px;
+}
+
+
+.header-title{
+
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#button-text{
+
+    float:right;
+    font-weight: bold;
+}
+
+.modal-title{
+
+    color: black;
     font-weight: bold;
     font-size: 1.2rem;
 }
