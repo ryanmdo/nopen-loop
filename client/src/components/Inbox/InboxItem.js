@@ -10,7 +10,7 @@ class InboxItem extends Component{
 
         return(
                 <div className='card bg-transparent'>
-                    <div className='card-body text-white'>
+                    <div className='card-body'>
                         {this.props.body}
 
                         <button type='button' className='close' onClick={this.props.removeItem} style={buttonStyle}>

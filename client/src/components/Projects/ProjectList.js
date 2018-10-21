@@ -26,7 +26,8 @@ class ProjectList extends Component {
                 </div>
 
                 <div className='card-body'>
-                    <ProjectCard />
+                {/* Placeholder Card */}
+                    <ProjectCard projectTitle='Example Project' projectMission='Mission statement goes right here. And what happens when that mission text is rather long and it starts to sound like an entire paragraph? Does it retain its old style?'/>
                 </div>
 
 
@@ -44,7 +45,21 @@ class ProjectList extends Component {
                             </button>
                         </div>
                         <div className="modal-body">
-                            This is where you ought to be able to make a new project
+                            <div className='card' id='project-card'>
+                                <div className='card-header' id='project-card-header'>
+                                    <textarea>
+                                        PROJECT TITLE GOES HERE
+                                    </textarea>
+                                </div>
+
+                                <div className='card-body' id='project-card-body'>
+                                    <textarea>
+                                        Project goal goes here.
+                                    </textarea>
+
+                                </div>
+
+                            </div>
                         </div>
 
                     </div>

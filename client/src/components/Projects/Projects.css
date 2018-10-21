@@ -1,17 +1,18 @@
 .card-body {
 
     background: rgba(0,0,0,0.80);
-    border-color: black;
+    border-style:hidden;
+    color: white;
+
   
 }
 
 .card-header{
 
     background: rgba(0,0,0,0.70);
-    border-color: black;
-    height: 60px;
+    border-style: hidden;
+    height: 100%;
 }
-
 
 .header-title{
 
@@ -20,15 +21,47 @@
     font-size: 1.2rem;
 }
 
+.modal-body{
+    background: rgba(0,0,0,0.80);
+}
+
+.modal-header{
+    background: rgba(0,0,0,0.70);
+
+
+}
+
+.modal-title{
+
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+
+
 #button-text{
 
     float:right;
     font-weight: bold;
 }
 
-.modal-title{
+#project-card-header{
+    background:rgb(0, 0, 80);
+    height: 100%
+}
 
-    color: black;
-    font-weight: bold;
-    font-size: 1.2rem;
+#project-card-body{
+    background: black
+}
+
+#project-card{
+
+    border-style: hidden;
+}
+
+textarea{
+    background: transparent;
+    border-style: hidden;
+    width: 100%
 }
