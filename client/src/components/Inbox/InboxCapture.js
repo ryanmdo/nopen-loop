@@ -12,7 +12,7 @@ class InboxCapture extends Component{
 
     handleInputChange = event => {
 
-        const value= event.target.value;
+        const value = event.target.value;
         //console.log(value)
 
         this.setState({
