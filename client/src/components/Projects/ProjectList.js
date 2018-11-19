@@ -44,14 +44,14 @@ class ProjectList extends Component {
         });
     }
 
-    handleTabInput = event => {
-        if(event.keyCode === 9){
+    // handleTabInput = event => {
+    //     if(event.keyCode === 9){
             
-            this.state.body += "  ";
-            console.log(this)
-            event.preventDefault();
-        }
-    }
+    //         this.state.body += "  ";
+    //         console.log(this)
+    //         event.preventDefault();
+    //     }
+    // }
 
 //How exactly will this component be able to adjust accordingly to the
 //UI? How does it become longer and short and still contain Project Cards?  
@@ -104,7 +104,7 @@ class ProjectList extends Component {
                                     </div>
 
                                     <div className='card-body' id='project-card-body'>
-                                        <TextareaAutoSize style={{minHeight:300}} className='card-body' placeholder="List actions." value={this.state.body} onChange={this.handleBodyInputChange} onKeyDown={this.handleTabInput}/>
+                                        <TextareaAutoSize style={{minHeight:300}} className='card-body' placeholder="List actions." value={this.state.body} onChange={this.handleBodyInputChange} />
                                     </div>
 
                                 </div>
