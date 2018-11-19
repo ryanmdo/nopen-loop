@@ -1,18 +1,23 @@
 .card-body {
-
     background: rgba(0,0,0,0.80);
     border-style:hidden;
     color: white;
-
-  
 }
 
-.card-header{
 
-    background: rgba(0,0,0,0.70);
+.card-header{
+    background: rgb(126, 126, 126);
     border-style: hidden;
     height: 100%;
 }
+
+
+.goal-text{
+    font-size: 1.0rem;
+    color: rgb(230, 230, 230)
+
+}
+
 
 .header-title{
     margin:3px;
@@ -21,23 +26,26 @@
     font-size: 1.0rem;
 }
 
+
 .modal-body{
     background: rgba(0,0,0,0.80);
+    outline: none;
+    border-style:hidden;
 }
+
 
 .modal-header{
-    background: rgba(0,0,0,0.70);
-
-
+    background: rgba(0,0,0,0.80);
+    outline: none;
+    border-style:hidden;
 }
 
-.modal-title{
 
+.modal-title{
     color: white;
     font-weight: bold;
     font-size: 1.2rem;
 }
-
 
 
 #button-text{
@@ -46,28 +54,31 @@
     margin:3px;
 }
 
+
 #save-project-button{
     float:left;
     margin-top: 15px;
-
 }
+
 
 #project-card-header{
     background:rgb(40, 20, 0);
     height: 100%
 }
 
+
 #project-card-body{
     background: black
 }
+
 
 #project-card{
     border-style: hidden;
 }
 
+
 textarea{
     background: transparent;
     border-style: hidden;
     width: 100%;
-    
 }

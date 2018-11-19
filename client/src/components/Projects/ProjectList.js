@@ -100,8 +100,7 @@ class ProjectList extends Component {
 
                                     <div className='card-header' id='project-card-header'>
                                         <TextareaAutoSize className='header-title' placeholder="Title the project." value={this.state.title} onChange={this.handleTitleInputChange}/>
-                                        <TextareaAutoSize className='header-title card-subtitle text-muted' placeholder="Define the condition for success." value={this.state.goal} onChange={this.handleGoalInputChange}/>
-                                    </div>
+                                        <TextareaAutoSize className='header-title goal-text text-muted' placeholder="Define the condition for success." value={this.state.goal} onChange={this.handleGoalInputChange} />                                    </div>
 
                                     <div className='card-body' id='project-card-body'>
                                         <TextareaAutoSize style={{minHeight:300}} className='card-body' placeholder="List actions." value={this.state.body} onChange={this.handleBodyInputChange} />
