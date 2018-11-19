@@ -6,9 +6,7 @@ import SidebarToggleButton from '../Sidebar/SidebarToggleButton';
 
 class Header extends Component {
 
-    // constructor(props){
-    //     super(props)
-    // }
+
 
 
     render(){

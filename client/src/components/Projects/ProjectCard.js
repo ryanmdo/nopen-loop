@@ -7,14 +7,14 @@ class ProjectCard extends Component{
     constructor(props){
 
         super(props);
-    }
+    };
 
     render(){
         return(
             <div className='card' id='project-card'>
                 <div  className='card-header' id='project-card-header'>            
                     <span className='header-title'>{this.props.projectTitle}</span>
-                    <h6 class="card-subtitle text-muted" style={{margin: '0px'}}>{this.props.projectMission}</h6>
+                    <h6 className="card-subtitle text-muted" style={{margin: '0px'}}>{this.props.projectMission}</h6>
                 </div>
                 <div className='card-body' id='project-card-body'>
 
@@ -22,7 +22,7 @@ class ProjectCard extends Component{
                 </div>
             </div>
         )
-    }
+    };
 
 }
 

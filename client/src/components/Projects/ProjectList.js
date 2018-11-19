@@ -33,7 +33,7 @@ class ProjectList extends Component {
 
                 {/* The entire modal gets stored inside of here */}
                 <div className="modal fade" id="test-modal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className="modal-dialog" role="document">
+                <div className="modal-dialog modal-lg" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
                             <span className="modal-title"> DEFINE NEW PROJECT</span>
@@ -47,16 +47,19 @@ class ProjectList extends Component {
                         <div className="modal-body">
                             <div className='card' id='project-card'>
                                 <div className='card-header' id='project-card-header'>
-                                    <textarea>
+                                    <textarea className='header-title'>
                                         PROJECT TITLE GOES HERE
+                                    </textarea>
+
+                                    <textarea className='header-title card-subtitle text-muted'>
+                                        project goal goes here
                                     </textarea>
                                 </div>
 
                                 <div className='card-body' id='project-card-body'>
-                                    <textarea>
-                                        Project goal goes here.
+                                   <textarea style={{height: '500px'}} className='card-body' >
+                                        PROJECT TITLE GOES HERE
                                     </textarea>
-
                                 </div>
 
                             </div>
@@ -69,6 +72,7 @@ class ProjectList extends Component {
             </div>
         );
     }
+
 
 
 
