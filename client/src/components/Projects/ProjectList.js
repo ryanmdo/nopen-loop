@@ -84,11 +84,13 @@ class ProjectList extends Component {
                 {/* The entire modal gets stored inside of here */}
 
                 <div className="modal fade" id="test-modal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    
                     <div className="modal-dialog modal-lg" role="document">
+                        
                         <div className="modal-content">
+                            
                             <div className="modal-header">
                                 <span className="modal-title">CREATE NEW PROJECT</span>
-
                                 <button id="button-text" className ='btn btn-info' type="button" data-dismiss="modal">
                                     <span aria-hidden='true' className='close-button'>
                                         &times;
@@ -114,8 +116,11 @@ class ProjectList extends Component {
                                     </span>
                                 </button>
                             </div>
+                            
                         </div>
+
                     </div>
+
                 </div>
 
 
