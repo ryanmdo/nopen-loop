@@ -28,9 +28,19 @@ module.exports = {
     },
 
     read: function(request, response) {
+
         console.log('GET /project/inbox --> projectController.read called');
 
-        
+        db.Project.find(
+            function(error, results){
+                if(error){
+                    console.error(error)
+                } else{
+
+                response.json(results)
+                }
+            }
+        )
     },
 
     update: function(request, response) {

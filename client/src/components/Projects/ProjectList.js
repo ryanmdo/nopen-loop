@@ -16,6 +16,8 @@ class ProjectList extends Component {
             title: '',
             goal: '',
             body: '',
+            projectArr: [],
+
         }
     }
 
@@ -70,6 +72,35 @@ class ProjectList extends Component {
         });
     }
 
+
+
+    componentDidMount() {
+        console.log('ProjectList componentDidMount EXECUTED')
+
+        axios({
+            method: 'GET',
+            url: '/api/project'
+    
+            //This is wen to use an arrow function
+            //The previous syntax function(response {}) made it so that this was not this, so this could not setState
+          }).then(response => {
+            //console.log(response)
+            
+            if(response.data.length > 0){
+                this.setState({
+                  projectArr:response.data
+                });
+
+                this.forceUpdate()
+    
+            }
+    
+          }).catch(error => {
+            console.error(error)
+          });
+
+    }
+
     render(){
         return(
 
@@ -87,10 +118,20 @@ class ProjectList extends Component {
 
 
 
-                {/* */}
-                <div className='card-body'>
-                    <ProjectCard projectTitle='Example Project' projectMission='Mission statement goes right here. And what happens when that mission text is rather long and it starts to sound like an entire paragraph? Does it retain its old style?'/>
-                </div>
+                {
+
+                    this.state.projectArr.map((object) => {
+
+                        return(
+                            <ProjectCard 
+                                key={object._id.toString()}
+                                projectTitle={object.title}
+                                projectGoal={object.goal}
+                                projectBody=''/>
+                                
+                        );
+                    })
+                }
 
 
 
@@ -143,15 +184,7 @@ class ProjectList extends Component {
 
             </div>
         );
-    }
-
-
-
-
-    componentDidMount(){
-        console.log('ProjectList componentDidMount EXECUTED')
-    }
-
+    }   
 
 
     

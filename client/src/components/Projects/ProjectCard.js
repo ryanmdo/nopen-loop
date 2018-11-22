@@ -14,7 +14,7 @@ class ProjectCard extends Component{
             <div className='card' id='project-card'>
                 <div  className='card-header' id='project-card-header'>            
                     <span className='header-title'>{this.props.projectTitle}</span>
-                    <h6 className="goal-text text-muted" style={{margin: '0px'}}>{this.props.projectMission}</h6>
+                    <h6 className="goal-text text-muted" style={{margin: '0px'}}>{this.props.projectGoal}</h6>
                 </div>
                 <div className='card-body' id='project-card-body'>
 
