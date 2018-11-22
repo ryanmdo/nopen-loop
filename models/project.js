@@ -15,15 +15,15 @@ const projectSchema = new Schema({
         required:true,
     },
 
-    goal_body: {
+    goal: {
         type:String,
         required:true,
     },
 
-    markdown_body: {
-        type:String,
-        required:true,
-    },
+    // markdown_body: {
+    //     type:String,
+    //     required:true,
+    // },
 
 
 });

@@ -8,7 +8,6 @@ class Header extends Component {
 
 
 
-
     render(){
         return(
                 <header className="">
@@ -20,7 +19,7 @@ class Header extends Component {
                             <div className="header-item header-logo">
                                 <h3 id="header-title">NOPEN-LOOP</h3>
                             </div>
-                        
+
                     </nav>
                 </header>
         );

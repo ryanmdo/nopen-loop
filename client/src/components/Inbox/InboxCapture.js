@@ -40,9 +40,8 @@ class InboxCapture extends Component{
 
         console.log('handleClick event EXECUTED with body text: ' + this.state.body)
 
-        //Struggling to properly recieve the data on the server side.
-        //It seems as though axios is working, unlike Request, but the full body needs to come through
 
+        
         axios({
             method: 'POST',
             url: '/api/inbox',
@@ -63,6 +62,7 @@ class InboxCapture extends Component{
         this.setState({
             body:''
         });
+
 
         
     }

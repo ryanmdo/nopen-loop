@@ -92,7 +92,7 @@ class InboxList extends Component {
                     <InboxItem 
                         key={object._id.toString()}
                         body={object.body}
-                        removeItem={this.removeItem.bind(this,object._id)}
+                        removeItem={this.removeItem.bind(this, object._id)}
                         closeHidden={this.props.closeHidden} />
                         
                 );
