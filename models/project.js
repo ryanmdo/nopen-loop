@@ -20,10 +20,10 @@ const projectSchema = new Schema({
         required:true,
     },
 
-    // markdown_body: {
-    //     type:String,
-    //     required:true,
-    // },
+    body: {
+        type:String,
+        required:true,
+    },
 
 
 });

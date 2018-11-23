@@ -58,6 +58,8 @@ class ProjectList extends Component {
                 "Access-Control-Allow-Origin": "*", //don't know what this is
                 title: this.state.title,
                 goal: this.state.goal,
+                body: this.state.body,
+
             }
           }).then(function (response) {
             console.log(response);
@@ -69,6 +71,7 @@ class ProjectList extends Component {
         this.setState({
             title: '',
             goal: '',
+            body:'',
         });
     }
 
