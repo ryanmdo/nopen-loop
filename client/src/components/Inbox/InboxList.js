@@ -77,6 +77,7 @@ class InboxList extends Component {
 
   render() {
 
+
     return (
       <div className='card bg-transparent'>
         <div className='card-header'>            
