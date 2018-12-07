@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './Projects.css';
 
 
+
 class ProjectCard extends Component{
 
     constructor(props){
@@ -27,4 +28,8 @@ class ProjectCard extends Component{
 
 }
 
+
 export default ProjectCard;
+
+
+

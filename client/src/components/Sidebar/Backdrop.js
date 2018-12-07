@@ -12,6 +12,7 @@ class Backdrop extends Component {
         return(
             <div className="backdrop" onClick={this.props.click}>
                 
+                
             </div>
         )
     }
