@@ -7,12 +7,21 @@ module.exports = {
 
     create: function(request, response) {
         console.log('POST /project/inbox --> projectController.create called');
-    
+        var bodyBR = request.body.body;
+        bodyBR = bodyBR.replace(/\n/g,'<br>')
+
+        console.log('PREFORMATTED BODY.BODY TEXT:')
+        console.log(request.body.body)
+        console.log('POSTFORMATTED BODY.BODY TEXT:')
+        console.log(bodyBR)
+
+
         db.Project.create({
             
-            title:request.headers.title,
-            goal:request.headers.goal
 
+            title:request.body.title,
+            goal:request.body.goal,
+            body:bodyBR
 
             //The utc_timestamp is already created in the model
         })
@@ -37,6 +46,7 @@ module.exports = {
                     console.error(error)
                 } else{
 
+                    console.log(results)
                 response.json(results)
                 }
             }

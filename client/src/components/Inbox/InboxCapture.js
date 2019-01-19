@@ -45,13 +45,12 @@ class InboxCapture extends Component{
         axios({
             method: 'POST',
             url: '/api/inbox',
-            
-            //The concern that I have is whether or not the body text ought to be placed in the headers
-            headers: {
-                'Content-Type': 'application/json;charset=UTF-8',
-                "Access-Control-Allow-Origin": "*", //don't know what this is
+            data: {
                 body: this.state.body
             }
+            
+
+            
           }).then(function (response) {
             console.log(response);
           }).catch(function (error){

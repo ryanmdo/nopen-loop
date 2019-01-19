@@ -13,7 +13,7 @@ module.exports = {
         //console.log('request.headers.body: '+ request.headers.body)
         
         db.Inbox.create({
-            body:request.headers.body,
+            body:request.body.body,
             //The utc_timestamp is already created in the model
         })
             .then(dbResult => { 
@@ -21,6 +21,7 @@ module.exports = {
                 response.json(dbResult)
             })
             .catch(error => {
+                console.log(error)
                 response.status(422).json(error)
             });
 

@@ -11,7 +11,7 @@ class Projects extends Component{
         return(
             <div className='row'>
                 <div className='col-md-12'>
-                    <ProjectList/>
+                    <ProjectList closeHidden={false}/>
                 </div>
 
             </div>

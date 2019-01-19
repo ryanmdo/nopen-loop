@@ -37,6 +37,21 @@ class ProjectList extends Component {
         });
     }
 
+    handleTabInput = event => {
+        console.log(event.target)
+
+        if(event.keyCode === 9){
+            event.preventDefault()
+            const value = event.target.value
+            const start = event.target.selectionStart
+            const end =   event.target.selectionEnd;
+
+            event.target.value = value.substring(0, start) + '\t' + value.substring(end)
+            event.target.selectionStart = event.target.selectionEnd = start + 1;
+        }
+        console.log(event.keyCode)
+    }
+
 
     handleBodyInputChange = event => {
         const value= event.target.value;
@@ -47,25 +62,23 @@ class ProjectList extends Component {
 
     handleSaveButtonPress = event => {
         console.log('SAVE PROJECT pressed');
-        
+
+        const projectData = {   title: this.state.title,
+                                goal: this.state.goal,
+                                body: this.state.body,      }
+                            
         axios({
             method: 'POST',
             url: '/api/project',
-            
-            //The concern that I have is whether or not the body text ought to be placed in the headers
-            headers: {
-                'Content-Type': 'application/json;charset=UTF-8',
-                "Access-Control-Allow-Origin": "*", //don't know what this is
+            data: {
                 title: this.state.title,
                 goal: this.state.goal,
-                body: this.state.body,
-
-            }
-          }).then(function (response) {
+                body: this.state.body}
+        }).then(function (response) {
             console.log(response);
-          }).catch(function (error){
+        }).catch(function (error){
               console.error(error)
-          });
+        });
 
 
         this.setState({
@@ -130,7 +143,8 @@ class ProjectList extends Component {
                                 key={object._id.toString()}
                                 projectTitle={object.title}
                                 projectGoal={object.goal}
-                                projectBody=''/>
+                                projectBody={object.body}
+                                closeHidden={this.props.closeHidden}/>
                                 
                         );
                     })
@@ -163,7 +177,7 @@ class ProjectList extends Component {
                                         <TextareaAutoSize className='header-title goal-text text-muted' placeholder="Define the condition for success." value={this.state.goal} onChange={this.handleGoalInputChange} />                                    </div>
 
                                     <div className='card-body' id='project-card-body'>
-                                        <TextareaAutoSize style={{minHeight:200}} className='card-body' placeholder="List actions." value={this.state.body} onChange={this.handleBodyInputChange} />
+                                        <TextareaAutoSize style={{minHeight:200}} id ='project-body-textarea' className='card-body' placeholder="List actions." value={this.state.body} onChange={this.handleBodyInputChange} onKeyDown={this.handleTabInput}/>
                                     </div>
 
                                 </div>
