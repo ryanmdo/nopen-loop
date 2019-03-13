@@ -1,7 +1,7 @@
 .card-body {
-    background: rgba(0,0,0,0.80);
-    border-style:hidden;
-    color: white;
+    /* background: white; */
+    /* border-style:hidden; */
+    /* color: white; */
 }
 
 
@@ -28,7 +28,7 @@
 
 
 .modal-body{
-    background: rgba(0,0,0,0.80);
+    background: rgba(53, 53, 53);
     outline: none;
     border-style:hidden;
 }
@@ -68,7 +68,7 @@
 
 
 #project-card-body{
-    background: black
+    /* background: white */
 }
 
 

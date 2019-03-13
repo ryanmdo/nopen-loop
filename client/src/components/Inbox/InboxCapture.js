@@ -21,18 +21,18 @@ class InboxCapture extends Component{
 
     }
 
-    handleEnterButton = event => {
-        // console.log(event.key)
-        if(event.key === 'Enter'){
+    // handleEnterButton = event => {
+    //     // console.log(event.key)
+    //     if(event.key === 'Enter'){
             
-            this.handleClick();
+    //         this.handleClick();
 
-            this.setState({
-                body:''
-            });
-        }
+    //         this.setState({
+    //             body:''
+    //         });
+    //     }
 
-    }
+    // }
 
 
     //Needs to be rephrased as submitText
@@ -84,7 +84,9 @@ class InboxCapture extends Component{
                     <div className="input-group">
                         <div className="input-group-prepend"></div>
                         
-                        <textarea onKeyPress={this.handleEnterButton} onChange={this.handleInputChange} value={this.state.body} className="form-control"></textarea>
+                        <textarea 
+                        // onKeyPress={this.handleEnterButton} 
+                        onChange={this.handleInputChange} value={this.state.body} className="form-control"></textarea>
                     </div>
                 </div>
             </div>
