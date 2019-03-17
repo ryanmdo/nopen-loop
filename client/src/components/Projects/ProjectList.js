@@ -9,6 +9,8 @@ import { Editor } from 'react-draft-wysiwyg';
 import './react-draft-wysiwyg.css';
 
 
+import MarkdownEditor from './MarkdownEditor'
+
 import './Projects.css';
 
 
@@ -101,7 +103,7 @@ class ProjectList extends Component {
 
 
     onEditorStateChange = (editorState) => {
-        
+
         console.log(editorState)
         
         this.setState({
@@ -206,10 +208,10 @@ class ProjectList extends Component {
                                     <div className='card-body' id='project-card-body'>
                                         {/* <TextareaAutoSize style={{minHeight:200}} id ='project-body-textarea' className='card-body' placeholder="List actions." value={this.state.body} onChange={this.handleBodyInputChange} onKeyDown={this.handleTabInput}/> */}
                                     
-                                        <Editor
+                                        {/* <Editor
                                             editorState={editorState}
                                             wrapperClassName="demo-wrapper"
-                                            editorClassName="demo-editor"
+                                            edi torClassName="demo-editor"
                                             onEditorStateChange={this.onEditorStateChange}
 
 
@@ -219,7 +221,10 @@ class ProjectList extends Component {
                                                 list: { inDropdown: true },
                                                 link: false,
                                             }}
-                                        />
+                                        /> */}
+
+
+                                        <MarkdownEditor/>
 
                                     </div>
 
