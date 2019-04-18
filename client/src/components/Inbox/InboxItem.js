@@ -18,7 +18,6 @@ class InboxItem extends Component{
                                 &times;
                             </span>
                         </button>
-
                     </div>
                 </div>
 

@@ -1,6 +1,13 @@
 import React, {Component} from 'react';
 import './Projects.css';
 
+// import immutable from 'immutable'
+
+
+import { convertFromRaw, EditorState } from 'draft-js';
+import { Editor } from 'react-draft-wysiwyg';
+import './react-draft-wysiwyg.css';
+
 
 
 class ProjectCard extends Component{
@@ -31,6 +38,14 @@ class ProjectCard extends Component{
                 </div>
                 <div className='card-body' id='project-card-body'>
 
+
+                    <Editor
+                    toolbarHidden
+                    editorState = {this.props.editorState}
+                    // toolbar={{
+                    //     options: []
+                    //   }}
+                    />
                     {this.props.projectBody}
                     
                     

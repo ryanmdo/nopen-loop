@@ -4,14 +4,21 @@ import TextareaAutoSize from 'react-autosize-textarea';
 import axios from 'axios';
 
 // for markdown
-import { EditorState } from 'draft-js';
+
+import { convertFromRaw, EditorState } from 'draft-js';
+
 import { Editor } from 'react-draft-wysiwyg';
+
 import './react-draft-wysiwyg.css';
 
 
-import MarkdownEditor from './MarkdownEditor'
+// import MarkdownEditor from './MarkdownEditor'
 
 import './Projects.css';
+
+// const content = {"entityMap":{},"blocks":[{"key":"637gr","text":"Initialized from content state.","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}}]};
+
+
 
 
 class ProjectList extends Component {
@@ -19,14 +26,17 @@ class ProjectList extends Component {
     constructor(props){
         super(props);
 
+
+
         this.state = {
             title: '',
             goal: '',
             body: '',
-            projectArr: [],
             editorState: EditorState.createEmpty(),
-
+            convertedEditorState: [],
+            projectArr: [],
         }
+
     }
 
 
@@ -75,17 +85,21 @@ class ProjectList extends Component {
     handleSaveButtonPress = event => {
         console.log('SAVE PROJECT pressed');
 
-        const projectData = {   title: this.state.title,
-                                goal: this.state.goal,
-                                body: this.state.body,      }
+        // const projectData = {   title: this.state.title,
+        //                         goal: this.state.goal,
+        //                         body: this.state.body,      }
+
                             
+        // var convertedContentState = convertFromRaw(this.state.editorState);
+
+
         axios({
             method: 'POST',
             url: '/api/project',
             data: {
                 title: this.state.title,
                 goal: this.state.goal,
-                body: this.state.body
+                body: this.state.editorState,
             }
         }).then(function (response) {
             console.log(response);
@@ -102,15 +116,16 @@ class ProjectList extends Component {
     }
 
 
+    
+
     onEditorStateChange = (editorState) => {
 
         console.log(editorState)
-        
+
+
         this.setState({
           editorState,
         });
-
-
       };
 
 
@@ -130,9 +145,13 @@ class ProjectList extends Component {
             //console.log(response)
             
             if(response.data.length > 0){
+
+                console.log(response.data)
                 this.setState({
                   projectArr:response.data
                 });
+
+                console.log(this.state.projectArr)
 
                 this.forceUpdate()
     
@@ -146,7 +165,22 @@ class ProjectList extends Component {
 
     render(){
 
-        const { editorState } = this.state;
+
+        var listProjects = this.state.projectArr.map((object) => 
+        
+            <ProjectCard
+            key={object._id.toString()}
+            projectTitle={object.title}
+            projectGoal={object.goal}
+            // projectBody={object.body}
+            editorState={object.body}
+            closeHidden={this.props.closeHidden}
+            />
+        )
+
+        var { editorState } = this.state;
+
+
 
         return(
 
@@ -161,23 +195,11 @@ class ProjectList extends Component {
                 </div>
 
 
+            {/* <ul> */}
+                {listProjects}
+            {/* </ul> */}
 
 
-                {
-
-                    this.state.projectArr.map((object) => {
-
-                        return(
-                            <ProjectCard 
-                                key={object._id.toString()}
-                                projectTitle={object.title}
-                                projectGoal={object.goal}
-                                projectBody={object.body}
-                                closeHidden={this.props.closeHidden}/>
-                                
-                        );
-                    })
-                }
 
 
 
@@ -206,25 +228,28 @@ class ProjectList extends Component {
                                         <TextareaAutoSize className='header-title goal-text text-muted' placeholder="Define the condition for success." value={this.state.goal} onChange={this.handleGoalInputChange} />                                    </div>
 
                                     <div className='card-body' id='project-card-body'>
-                                        {/* <TextareaAutoSize style={{minHeight:200}} id ='project-body-textarea' className='card-body' placeholder="List actions." value={this.state.body} onChange={this.handleBodyInputChange} onKeyDown={this.handleTabInput}/> */}
-                                    
-                                        {/* <Editor
-                                            editorState={editorState}
-                                            wrapperClassName="demo-wrapper"
-                                            edi torClassName="demo-editor"
-                                            onEditorStateChange={this.onEditorStateChange}
+                                       
 
 
-                                            toolbarClassName="toolbar-class"
-                                            toolbar={{
-                                                inline: { inDropdown: true },
-                                                list: { inDropdown: true },
-                                                link: false,
-                                            }}
-                                        /> */}
+                                        <Editor
+        onEditorStateChange={this.onEditorStateChange}
+        editorState={editorState}
 
+        // onChange={this.onChange}
+        // onContentStateChange={this.onContentStateChange}
+        // contentState={contentState}
 
-                                        <MarkdownEditor/>
+        toolbar={{
+            options: ['inline', 'list',],
+            inline: {
+                options: ['bold', 'italic', 'underline', 'strikethrough'],
+                bold: { className: 'bordered-option-classname' },
+                italic: { className: 'bordered-option-classname' },
+                underline: { className: 'bordered-option-classname' },
+                strikethrough: { className: 'bordered-option-classname' },
+                     },
+          }}
+                                        />
 
                                     </div>
 
