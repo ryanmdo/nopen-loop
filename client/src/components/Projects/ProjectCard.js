@@ -42,9 +42,7 @@ class ProjectCard extends Component{
                     <Editor
                     toolbarHidden
                     editorState = {this.props.editorState}
-                    // toolbar={{
-                    //     options: []
-                    //   }}
+
                     />
                     {this.props.projectBody}
                     

@@ -8,14 +8,18 @@ class MarkdownEditor extends Component {
 
     super(props);
 
-    // this.state = {
-    //   editorState: EditorState.createEmpty(),
-    // };
+    this.state = {
+      // editorState: EditorState.createEmpty(),
+      editable: true,
+    };
 
   }
 
 
-  //        const buttonStyle = this.props.closeHidden ? {display:'none'} : {};
+  //     const buttonStyle = this.props.closeHidden ? {display:'none'} : {};
+
+
+
 
 
   render() {
@@ -27,14 +31,14 @@ class MarkdownEditor extends Component {
         editorClassName="demo-editor"
         onEditorStateChange={this.onEditorStateChange}
         toolbar={{
-          options: ['inline', 'list',],
-          inline: {
-        options: ['bold', 'italic', 'underline', 'strikethrough'],
-        bold: { className: 'bordered-option-classname' },
-        italic: { className: 'bordered-option-classname' },
-        underline: { className: 'bordered-option-classname' },
-        strikethrough: { className: 'bordered-option-classname' },
-      },
+            options: ['inline', 'list',],
+            inline: {
+                options: ['bold', 'italic', 'underline', 'strikethrough'],
+                bold: { className: 'bordered-option-classname' },
+                italic: { className: 'bordered-option-classname' },
+                underline: { className: 'bordered-option-classname' },
+                strikethrough: { className: 'bordered-option-classname' },
+                    },
         }}
       />
     )

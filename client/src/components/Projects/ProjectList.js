@@ -5,7 +5,7 @@ import axios from 'axios';
 
 // for markdown
 
-import { convertFromRaw, EditorState } from 'draft-js';
+import { convertFromRaw, convertToRaw, EditorState } from 'draft-js';
 
 import { Editor } from 'react-draft-wysiwyg';
 
@@ -26,6 +26,9 @@ class ProjectList extends Component {
     constructor(props){
         super(props);
 
+        this.componentDidMount = this.componentDidMount.bind(this);
+
+
 
 
         this.state = {
@@ -33,7 +36,6 @@ class ProjectList extends Component {
             goal: '',
             body: '',
             editorState: EditorState.createEmpty(),
-            convertedEditorState: [],
             projectArr: [],
         }
 
@@ -99,7 +101,7 @@ class ProjectList extends Component {
             data: {
                 title: this.state.title,
                 goal: this.state.goal,
-                body: this.state.editorState,
+                body: convertToRaw(this.state.editorState.getCurrentContent()),
             }
         }).then(function (response) {
             console.log(response);
@@ -120,7 +122,23 @@ class ProjectList extends Component {
 
     onEditorStateChange = (editorState) => {
 
-        console.log(editorState)
+        // console.log('editorState:')
+        // console.log(editorState)
+
+        // const rawState = convertToRaw(editorState)
+        // console.log(rawState)
+
+
+        console.log('editorState.getCurrentContent()')
+        console.log(editorState.getCurrentContent())
+
+
+        console.log('convertToRaw(editorState.getCurrentContent())')
+        console.log(convertToRaw(editorState.getCurrentContent()))
+
+
+        console.log('getEntityMap(editorState.getCurrentContent())')
+        console.log(editorState.getCurrentContent().getEntityMap())
 
 
         this.setState({
@@ -151,9 +169,7 @@ class ProjectList extends Component {
                   projectArr:response.data
                 });
 
-                console.log(this.state.projectArr)
-
-                this.forceUpdate()
+                // console.log(this.projectArr)
     
             }
     
@@ -167,16 +183,28 @@ class ProjectList extends Component {
 
 
         var listProjects = this.state.projectArr.map((object) => 
+
         
             <ProjectCard
             key={object._id.toString()}
             projectTitle={object.title}
             projectGoal={object.goal}
             // projectBody={object.body}
-            editorState={object.body}
+            // editorState={object.body}
+            defaultContentState={object.body}
             closeHidden={this.props.closeHidden}
             />
         )
+        console.log('listProjects')
+        console.log(listProjects)
+
+
+
+        // console.log('CONVERTED this.state.projectArr')
+
+        console.log(this.state.projectArr)
+        // console.log(convertFromRaw(this.state.projectArr))
+
 
         var { editorState } = this.state;
 
